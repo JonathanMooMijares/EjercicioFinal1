@@ -27,19 +27,10 @@ public class Itinerario {
     public Piloto getPiloto(){
         return piloto;
     }
-    /*
-    public boolean coincidenciasDeHorario(Itinerario otroItinerario){
-        int horaInicio1=extraerHora(horaInicio);
-        int minutoInicio1=extraerMinuto(horaInicio);
-        int horaFin1= extraerHora()
 
-        return false;
-    }
-
-     */
+    @Override
     public String toString(){
-        return "Itinerario: " + ciudadOrigen + " --> " + destino + ", Hora de inicio: " + horaInicio + ", Hora de fin: " + horaFin +
-                ", Avion: " + avion.getModelo() + ", Piloto: " +piloto.getNombre();
+        return "Itinerario: " + ciudadOrigen + " --> " + destino + ", Hora de inicio: " + horaInicio + ", Hora de fin: " + horaFin + ", Avion: " + avion.getModelo() + ", Piloto: " +piloto.getNombre();
     }
 
 }
