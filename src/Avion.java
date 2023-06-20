@@ -1,13 +1,13 @@
 public class Avion {
-    private String modelo;
+    private String clase;
 
-    public Avion(String modelo){
+    public Avion(String clase){
 
-        this.modelo= modelo;
+        this.clase= clase;
     }
 
-    public String getModelo(){
+    public String getclase(){
 
-        return modelo;
+        return clase;
     }
 }

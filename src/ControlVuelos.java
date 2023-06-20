@@ -11,9 +11,9 @@ public class ControlVuelos {
 
         while (continuar){
             //Se crea un objeto avión para poder identificarlo
-            System.out.print("Ingresa el modelo del avión: ");
-            String modeloAvion = control.nextLine();
-            Avion avion = new Avion(modeloAvion);
+            System.out.print("Ingresa la clase del avión: Primera Clase / Clase ordinaria");
+            String claseAvion = control.nextLine();
+            Avion avion = new Avion(claseAvion);
 
             //Se crea un piloto y se pide el nombre
             System.out.print("Ingresa el nombre del piloto: ");
@@ -36,10 +36,10 @@ public class ControlVuelos {
             LocalTime horaF = LocalTime.parse(horaFin);
 
             if (horaIni2 != null && horaF2 != null) {
-                if (horaIni.compareTo(horaF2) <= 0 && horaF.compareTo(horaIni2) >= 0) {
+                if (horaIni.compareTo(horaF2) < 0 && horaF.compareTo(horaIni2) > 0) {
 
                     System.out.println("Hay choque de horarios para el piloto " + nombrePiloto);
-                    continuar=false;
+                    //continuar=false;
                 } else {
                     System.out.println("No hay un choque de horarios para el piloto " + nombrePiloto);
                 }

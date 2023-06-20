@@ -16,9 +16,11 @@ public class Itinerario {
     }
 
     public void asignarAvion(Avion avion){
+
         this.avion=avion;
     }
     public Avion getAvion(){
+
         return avion;
     }
 
@@ -35,7 +37,7 @@ public class Itinerario {
 
 
     public String toString(){
-        return "Itinerario: " + ciudadOrigen + " --> " + destino + ", Hora de inicio: " + horaInicio + ", Hora de fin: " + horaFin + ", Avion: " + avion.getModelo() + ", Piloto: " +piloto.getNombre();
+        return "Itinerario: " + ciudadOrigen + " --> " + destino + ", Hora de inicio: " + horaInicio + ", Hora de fin: " + horaFin + ", Avion: " + avion.getclase() + ", Piloto: " +piloto.getNombre();
     }
 
 }
