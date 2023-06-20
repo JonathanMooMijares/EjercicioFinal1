@@ -31,7 +31,6 @@ public class ControlVuelos {
             String horaFin = control.nextLine();
             Itinerario itinerario = new Itinerario(ciudadOrigen, destino, horaInicio, horaFin);
 
-
             boolean disponible = true;
             // ...
 
