@@ -30,7 +30,6 @@ public class ControlVuelos {
             System.out.print("Ingresa la hora aproximada de la llegada del vuelo (HH:mm): ");
             String horaFin = control.nextLine();
             Itinerario itinerario = new Itinerario(ciudadOrigen, destino, horaInicio, horaFin);
-
             boolean disponible = true; //banderas
 
             LocalTime horaIni = LocalTime.parse(horaInicio);
