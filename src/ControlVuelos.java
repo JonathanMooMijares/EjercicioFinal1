@@ -1,11 +1,11 @@
 import java.time.LocalTime;
-import java.time.chrono.ChronoLocalDateTime;
-import java.util.Locale;
 import java.util.Scanner;
 public class ControlVuelos {
     public static void main(String[] args) {
         Scanner control = new Scanner(System.in);
 
+        LocalTime horaIni2=null;
+        LocalTime horaF2=null;
 
         boolean continuar = true; //banderas
 
@@ -35,18 +35,17 @@ public class ControlVuelos {
             LocalTime horaIni = LocalTime.parse(horaInicio);
             LocalTime horaF = LocalTime.parse(horaFin);
 
-            LocalTime horaIni2 = LocalTime.parse(horaInicio);
-            LocalTime horaF2 = LocalTime.parse(horaFin);
+            if (horaIni2 != null && horaF2 != null) {
+                if (horaIni.compareTo(horaF2) <= 0 && horaF.compareTo(horaIni2) >= 0) {
 
-
-
-            if (horaIni.compareTo(horaF2) < 0 && horaF.compareTo(horaIni2) > 0){
-
-                System.out.println("No hay choque de horarios para el piloto " +nombrePiloto);
-
-            } else{
-                System.out.println("Hay un choque de horarios para el piloto " +nombrePiloto);
+                    System.out.println("Hay choque de horarios para el piloto " + nombrePiloto);
+                    continuar=false;
+                } else {
+                    System.out.println("No hay un choque de horarios para el piloto " + nombrePiloto);
+                }
             }
+            horaIni2 = horaIni;
+            horaF2 = horaF;
 
             if (disponible) {
                 // Asignar avión y piloto al itinerario
