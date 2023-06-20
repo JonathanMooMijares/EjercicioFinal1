@@ -7,7 +7,7 @@ public class ControlVuelos {
         Scanner control = new Scanner(System.in);
 
 
-        boolean continuar = true;
+        boolean continuar = true; //banderas
 
         while (continuar){
             //Se crea un objeto avión para poder identificarlo
@@ -31,8 +31,23 @@ public class ControlVuelos {
             String horaFin = control.nextLine();
             Itinerario itinerario = new Itinerario(ciudadOrigen, destino, horaInicio, horaFin);
 
-            boolean disponible = true;
-            // ...
+            boolean disponible = true; //banderas
+
+            LocalTime horaIni = LocalTime.parse(horaInicio);
+            LocalTime horaF = LocalTime.parse(horaFin);
+
+            LocalTime horaIni2 = LocalTime.parse(horaInicio);
+            LocalTime horaF2 = LocalTime.parse(horaFin);
+
+
+
+            if (horaIni.compareTo(horaF2) < 0 && horaF.compareTo(horaIni2) > 0){
+
+                System.out.println("No hay choque de horarios para el piloto " +nombrePiloto);
+
+            } else{
+                System.out.println("Hay un choque de horarios para el piloto " +nombrePiloto);
+            }
 
             if (disponible) {
                 // Asignar avión y piloto al itinerario
@@ -57,27 +72,7 @@ public class ControlVuelos {
                 System.out.println();
             }
 
-            LocalTime horaIni = LocalTime.parse(horaInicio);
-            LocalTime horaF = LocalTime.parse(horaFin);
-            //LocalTime horaIni2 = horaIni;
-            //LocalTime horaF2 =horaF;
 
-            LocalTime horaIni2 = LocalTime.parse(horaInicio);
-            LocalTime horaF2 = LocalTime.parse(horaFin);
-
-
-
-            if (horaIni.compareTo(horaF2) < 0){
-
-                System.out.println("No hay choque de horarios para el piloto " +nombrePiloto);
-                if ( horaF.compareTo(horaIni2) > 0){
-
-                }
-            } else{
-                System.out.println("Hay un choque de horarios para el piloto " +nombrePiloto);
-            }
         }
-
-
     }
 }
