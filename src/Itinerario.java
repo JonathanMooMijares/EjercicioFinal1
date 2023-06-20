@@ -1,3 +1,5 @@
+import java.time.LocalTime;
+
 public class Itinerario {
     private String ciudadOrigen;
     private String destino;
@@ -21,14 +23,17 @@ public class Itinerario {
     }
 
     public void asignarPiloto(Piloto piloto){
+
         this.piloto=piloto;
     }
 
     public Piloto getPiloto(){
+
         return piloto;
     }
 
-    @Override
+
+
     public String toString(){
         return "Itinerario: " + ciudadOrigen + " --> " + destino + ", Hora de inicio: " + horaInicio + ", Hora de fin: " + horaFin + ", Avion: " + avion.getModelo() + ", Piloto: " +piloto.getNombre();
     }
